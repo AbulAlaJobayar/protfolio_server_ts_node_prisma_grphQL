@@ -8,34 +8,36 @@ datasource db {
 }
 
 model User {
-  id          String      @id @default(uuid())
+  id          String       @id @default(uuid())
   name        String
-  email       String      @unique
+  email       String       @unique
   password    String
   photo       String
   description String
-  role        String      @default("ADMIN")
-  createdAt   DateTime    @default(now())
-  updatedAt   DateTime    @updatedAt
-  exprience   Exprience[]
+  role        String       @default("ADMIN")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  experience  Experience[]
   project     Project[]
+  skill       Skill[]
+  blog        Blog[]
 
   @@map("user")
 }
 
-model Exprience {
+model Experience {
   id          String   @id @default(uuid())
   userId      String
   company     String
   position    String
-  startDate   DateTime
-  endDate     DateTime
+  startDate   String
+  endDate     String
   description String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   user        User     @relation(fields: [userId], references: [id])
 
-  @@map("exprience")
+  @@map("experience")
 }
 
 model Project {
@@ -62,6 +64,7 @@ model Blog {
   photo     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
 
   @@map("blog")
 }
@@ -73,4 +76,5 @@ model Skill {
   level     String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id])
 }
