@@ -1,5 +1,5 @@
 import { User } from "@prisma/client";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 import config from "../../config";
 import bcrypt from "bcrypt";
 

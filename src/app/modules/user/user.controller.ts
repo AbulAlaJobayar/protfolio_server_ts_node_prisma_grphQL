@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import catchAsync from "../../../shared/catchAsync";
+import catchAsync from "../../shared/catchAsync";
 import { userServices } from "./user.services";
-import sendResponse from "../../../shared/sendResponse";
+import sendResponse from "../../shared/sendResponse";
 import httpStatus from "http-status";
 
 const createUserIntoDB = catchAsync(async (req: Request, res: Response) => {

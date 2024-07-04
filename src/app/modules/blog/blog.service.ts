@@ -1,5 +1,5 @@
 import {Blog } from "@prisma/client";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createBlogIntoDB = async (payload: Blog, id: string) => {
   const result = await prisma.blog.create({ data: payload });

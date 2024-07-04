@@ -1,5 +1,5 @@
 import {Skill } from "@prisma/client";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createSkillIntoDB = async (payload: Skill, id: string) => {
   const result = await prisma.skill.create({ data: payload });

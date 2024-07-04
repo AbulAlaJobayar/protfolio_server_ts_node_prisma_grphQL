@@ -1,5 +1,5 @@
 import { Experience } from "@prisma/client";
-import prisma from "../../../shared/prisma";
+import prisma from "../../shared/prisma";
 
 const createExperienceIntoDB = async (payload: Experience, id: string) => {
 //   payload.userId = id;
