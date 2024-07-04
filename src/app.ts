@@ -14,7 +14,7 @@ const app: Application = express();
 
 //middleware
 app.use(cors({
-  origin:  ['http://localhost:3000','*'],
+  origin:  ['http://localhost:3000','https://portfolio-rose-theta-63.vercel.app','*'],
   credentials: true,
 }));
 
