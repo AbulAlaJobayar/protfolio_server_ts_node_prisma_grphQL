@@ -22,7 +22,16 @@ const getProjectFromDB = () => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield prisma_1.default.project.findMany({ include: { user: true } });
     return result;
 });
+const getSingleProjectFromDB = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield prisma_1.default.project.findUniqueOrThrow({
+        where: {
+            id: id,
+        },
+    });
+    return result;
+});
 exports.ProjectService = {
     createProjectIntoDB,
     getProjectFromDB,
+    getSingleProjectFromDB,
 };

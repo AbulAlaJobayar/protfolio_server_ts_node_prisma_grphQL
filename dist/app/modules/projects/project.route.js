@@ -6,4 +6,5 @@ const project_controller_1 = require("./project.controller");
 const route = (0, express_1.Router)();
 route.post("/create_project", project_controller_1.ProjectController.createProjectIntoDB);
 route.get("/project", project_controller_1.ProjectController.getProjectFromDB);
+route.get("/single_project/:id", project_controller_1.ProjectController.getSingleProjectFromDB);
 exports.ProjectRoute = route;
