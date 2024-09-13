@@ -4,8 +4,8 @@ import config from "../../config";
 import bcrypt from "bcrypt";
 
 const createUserIntoDB = async (payload: User) => {
-  console.log("services",payload.password)
-        const hashedPassword = await bcrypt.hash(
+  console.log("services", payload.password);
+  const hashedPassword = await bcrypt.hash(
     payload.password,
     Number(config.bcrypt_salt_round)
   );
