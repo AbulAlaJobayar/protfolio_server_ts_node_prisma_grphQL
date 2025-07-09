@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsnd --respawn src/server.ts",
+    "seed": "ts-node src/app/utils/seedSuperAdmin.ts",
     "build": "tsc",
     "start": "node dist/server.js",
     "postinstall": "prisma generate"
