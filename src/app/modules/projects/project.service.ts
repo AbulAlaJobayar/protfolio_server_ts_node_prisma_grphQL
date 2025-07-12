@@ -6,7 +6,10 @@ const createProjectIntoDB = async (payload: Project, id: string) => {
   return result;
 };
 const getProjectFromDB = async () => {
-  const result = await prisma.project.findMany({ include: { user: true } });
+  const result = await prisma.project.findMany({
+    include: { user: true },
+    orderBy: { createdAt: "desc" },
+  });
   return result;
 };
 const getSingleProjectFromDB = async (id: string) => {
@@ -14,9 +17,8 @@ const getSingleProjectFromDB = async (id: string) => {
     where: {
       id: id,
     },
-   
   });
- return result
+  return result;
 };
 
 export const ProjectService = {

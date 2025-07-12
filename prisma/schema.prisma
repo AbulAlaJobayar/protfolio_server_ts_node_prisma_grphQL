@@ -49,6 +49,7 @@ model Project {
   githubClient String
   githubServer String
   liveLink     String
+  tags         String[]
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   user         User     @relation(fields: [userId], references: [id])
